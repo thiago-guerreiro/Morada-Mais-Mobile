@@ -35,14 +35,14 @@ export default function Login({ navigation }) {
                 secureTextEntry={true}
             />
             <TouchableOpacity
-                style={specificStyle.btnSubmit}
+                style={styles.btnSubmit}
                 onPress={() => entrar()} >
-                <Text style={specificStyle.submitText}>Entrar</Text>
+                <Text style={styles.submitText}>Entrar</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                style={specificStyle.btnRegister}
+                style={styles.btnRegister}
                 onPress={() => cadastrar()} >
-                <Text style={specificStyle.registerText}>Criar uma conta</Text>
+                <Text style={styles.registerText}>Criar uma conta</Text>
             </TouchableOpacity>
         </View>
     );
@@ -60,23 +60,5 @@ const specificStyle = StyleSheet.create({
         width: '100%',
         marginTop: 10
     },
-    btnSubmit:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#6615dd',
-        height: 45,
-        width: '60%',
-        borderRadius: 7,
-        marginTop: 10,
-    },
-    submitText:{
-        color: '#fff',
-        fontSize: 18,
-    },
-    btnRegister:{
-        marginTop: 10,
-    },
-    registerText:{
-        color: '#6615dd',
-    },
+
 })

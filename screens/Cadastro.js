@@ -5,7 +5,6 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { CheckBox, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../style/MainStyle';
 
 export default function Cadastro({ navigation }) {
@@ -48,6 +47,10 @@ export default function Cadastro({ navigation }) {
         if (validar()) {
             console.log("Salvou")
         }
+    }
+
+    const login = () => {
+        navigation.navigate("Login")
     }
 
     return (
@@ -123,11 +126,16 @@ export default function Cadastro({ navigation }) {
                     onPress={() => setSelected(!isSelected)}
                 />
                 <View style={specificStyle.btn}>
-                <TouchableOpacity
-                    style={specificStyle.btnSubmit}
-                    onPress={() => salvar()} >
-                    <Text style={specificStyle.submitText}>Cadastrar</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.btnSubmit}
+                        onPress={() => salvar()} >
+                        <Text style={styles.submitText}>Cadastrar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.btnRegister}
+                        onPress={() => login()} >
+                        <Text style={styles.registerText}>Já tem cadastro? Faça login</Text>
+                    </TouchableOpacity>
                 </View>
 
             </ScrollView>
@@ -146,18 +154,5 @@ const specificStyle = StyleSheet.create({
     },
     btn: {
         alignItems: 'center',
-    },
-    btnSubmit:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#6615dd',
-        height: 45,
-        width: '60%',
-        borderRadius: 7,
-        marginTop: 10,
-    },
-    submitText:{
-        color: '#fff',
-        fontSize: 18,
     },
 })

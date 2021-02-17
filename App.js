@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text, Input, Button } from 'react-native-elements';
-import styles from './style/MainStyle';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './screens/Login';
@@ -13,17 +11,25 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Principal" component={Principal} />
-      <Stack.Screen name="Cadastro" component={Cadastro} />
+      <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
+      <Stack.Screen name="Principal" component={Principal} options={{headerShown:false}} />
+      <Stack.Screen name="Cadastro" component={Cadastro} options={{headerShown:false}} />
     </Stack.Navigator>
   );
 }
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+    <SafeAreaView style={specificStyle.safe}>
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
+
+const specificStyle = StyleSheet.create({
+  safe: {
+    flex: 1,
+  },
+})

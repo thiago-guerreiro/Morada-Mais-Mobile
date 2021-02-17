@@ -8,14 +8,18 @@ export default function Feed() {
     return (
         <ScrollView >
             <View style={specificStyle.container}>
-                <SearchBar style={specificStyle.search}
+                <SearchBar
                     placeholder="Pesquisar por região..."
+                    containerStyle={{backgroundColor: '#6615dd'}}
+                    inputContainerStyle={{backgroundColor: '#6615dd'}}
+                    searchIcon={{color: '#fff'}}
+                    inputStyle={{backgroundColor: 'white', height: 5, borderRadius: 5}}
                 />
                 <View style={specificStyle.card}>
                     <Text style={specificStyle.title}>CASA PRÓXIMO AO METRÔ</Text>
                     <Text style={specificStyle.title}>Valor: R$ 300, mensal</Text>
                     <Text style={specificStyle.data}>Data da oferta: 20/01/2021 21:53:46</Text>
-                    <Image style={specificStyle.image} source={require('../assets/casa1.jpg')} />
+                    <Image style={specificStyle.image} source={require('../assets/imoveis/casa1.jpg')} />
                     <Text style={specificStyle.descricao}>Meu perfil: Fumante e amante da arte</Text>
                     <Text style={specificStyle.descricao}>Região: Zona Leste</Text>
                     <Text style={specificStyle.descricao}>Descrição: 2 quartos, cozinha, sala e banhiero</Text>
@@ -39,7 +43,7 @@ export default function Feed() {
                     <Text style={specificStyle.title}>2 QUARTOS GRANDES</Text>
                     <Text style={specificStyle.title}>Valor: R$ 300, mensal</Text>
                     <Text style={specificStyle.data}>Data da oferta: 20/01/2021 21:58:00</Text>
-                    <Image style={specificStyle.image} source={require('../assets/casa2.jpg')} />
+                    <Image style={specificStyle.image} source={require('../assets/imoveis/casa2.jpg')} />
                     <Text style={specificStyle.descricao}>Meu perfil: Fumante e amante da arte</Text>
                     <Text style={specificStyle.descricao}>Região: Zona Norte</Text>
                     <Text style={specificStyle.descricao}>Descrição: 2 quartos, sala, cozinha, banheiro reformado</Text>
@@ -63,7 +67,7 @@ export default function Feed() {
                     <Text style={specificStyle.title}>CASA PROXIMA AO CENTRO</Text>
                     <Text style={specificStyle.title}>Valor: R$ 300, mensal</Text>
                     <Text style={specificStyle.data}>Data da oferta: 28/01/2021 09:52:12</Text>
-                    <Image style={specificStyle.image} source={require('../assets/casa3.jpg')} />
+                    <Image style={specificStyle.image} source={require('../assets/imoveis/casa3.jpg')} />
                     <Text style={specificStyle.descricao}>Meu perfil: Não fumante, aceito até 1 pet (cachorro ou gato)</Text>
                     <Text style={specificStyle.descricao}>Região: Zona Leste</Text>
                     <Text style={specificStyle.descricao}>Descrição: 2 quartos, banheiro, sala ampla e cozinha</Text>

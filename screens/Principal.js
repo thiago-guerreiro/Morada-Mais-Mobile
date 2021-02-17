@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import FeedImoveis from './FeedImoveis';
 
+import CadastroImovel from './CadastroImovel';
+
 function Profile() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -51,6 +53,18 @@ export default function Principal() {
             ),
             }}
         />
+
+        <Tab.Screen
+            name="CadastroImovel"
+            component={CadastroImovel}
+            options={{
+            tabBarLabel: 'Cadastrar Imóvel',
+            tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="home-city" color={color} size={size} />
+            ),
+            }}
+        />
+
         <Tab.Screen
             name="Profile"
             component={Profile}
