@@ -3,14 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-function Feed() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Feed!</Text>
-        </View>
-    );
-}
+import FeedImoveis from './FeedImoveis';
 
 function Profile() {
     return (
@@ -35,14 +28,14 @@ export default function Principal() {
         <Tab.Navigator
         initialRouteName="Feed"
         tabBarOptions={{
-            activeTintColor: '#e91e63',
+            activeTintColor: '#6615dd',
         }}
         >
         <Tab.Screen
             name="Feed"
-            component={Feed}
+            component={FeedImoveis}
             options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Imóveis',
             tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="home" color={color} size={size} />
             ),

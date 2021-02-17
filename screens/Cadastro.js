@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Platform } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
-import { StyleSheet, View } from 'react-native';
-import { Button, CheckBox, Input, Text } from 'react-native-elements';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { CheckBox, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -56,7 +56,7 @@ export default function Cadastro({ navigation }) {
             style={[styles.container, specificStyle.specificContainer]}
             keyboardVerticalOffset={80}>
             <ScrollView style={{ width: "100%" }}>
-                <Text h3>Cadastre-se</Text>
+
                 <Input
                     placeholder="E-mail"
                     onChangeText={value => {
@@ -122,19 +122,14 @@ export default function Cadastro({ navigation }) {
                     checked={isSelected}
                     onPress={() => setSelected(!isSelected)}
                 />
+                <View style={specificStyle.btn}>
+                <TouchableOpacity
+                    style={specificStyle.btnSubmit}
+                    onPress={() => salvar()} >
+                    <Text style={specificStyle.submitText}>Cadastrar</Text>
+                </TouchableOpacity>
+                </View>
 
-                <Button
-                    icon={
-                        <Icon
-                            name="check"
-                            size={15}
-                            color="white"
-                        />
-                    }
-                    title="Salvar"
-                    buttonStyle={specificStyle.button}
-                    onPress={() => salvar()}
-                />
             </ScrollView>
         </KeyboardAvoidingView>
     );
@@ -147,6 +142,22 @@ const specificStyle = StyleSheet.create({
     },
     button: {
         width: "100%",
-        marginTop: 10
-    }
+        marginTop: 10,
+    },
+    btn: {
+        alignItems: 'center',
+    },
+    btnSubmit:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#6615dd',
+        height: 45,
+        width: '60%',
+        borderRadius: 7,
+        marginTop: 10,
+    },
+    submitText:{
+        color: '#fff',
+        fontSize: 18,
+    },
 })
