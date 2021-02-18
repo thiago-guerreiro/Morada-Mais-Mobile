@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './screens/Login';
 import Principal from './screens/Principal';
 import Cadastro from './screens/Cadastro';
+import Termos from './screens/Termos';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,18 @@ function MyStack() {
       <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
       <Stack.Screen name="Principal" component={Principal} options={{headerShown:false}} />
       <Stack.Screen name="Cadastro" component={Cadastro} options={{headerShown:false}} />
+      <Stack.Screen name="Termos" component={Termos} 
+        options={{
+          title: 'Voltar',
+          headerStyle: {
+            backgroundColor: '#6615dd',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
     </Stack.Navigator>
   );
 }

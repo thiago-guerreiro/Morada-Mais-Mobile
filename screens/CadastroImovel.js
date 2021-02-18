@@ -53,6 +53,12 @@ export default function CadastroImovel() {
                 <TextInput style={css.input}
                     placeholder='R$ 000,00'
                 />
+
+                <TouchableOpacity
+                    style={css.btnSubmit}
+                >
+                    <Text style={css.submitText}>Cadastrar</Text>
+                </TouchableOpacity>
             </KeyboardAvoidingView>
             {/*</View>*/}
             <View style={css.footer} />
@@ -66,7 +72,7 @@ const css = StyleSheet.create({
         backgroundColor: '#6615dd',
     },
     form: {
-        flex: 5,
+        flex: 7,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -115,5 +121,18 @@ const css = StyleSheet.create({
     footer: {
         flex: 1,
         backgroundColor: '#6615dd',
-    }
+    },
+    btnSubmit: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#6615dd',
+        height: 45,
+        width: '40%',
+        borderRadius: 7,
+        marginTop: 10,
+      },
+      submitText: {
+        color: '#fff',
+        fontSize: 18,
+      },
 })

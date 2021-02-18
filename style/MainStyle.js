@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ccc',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 10,
   },
   maskedInput: {
     flexGrow: 1,

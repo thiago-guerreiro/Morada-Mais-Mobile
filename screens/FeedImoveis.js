@@ -83,8 +83,9 @@ const specificStyle = StyleSheet.create({
     },
     card: {
         backgroundColor: '#fff',
-        padding: 5,
+        padding: 15,
         marginTop: 15,
+        marginBottom: 10,
     },
     title: {
         fontSize: 12,
