@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View, Image, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Image, Text, StatusBar } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
@@ -8,13 +8,14 @@ export default function Feed() {
     return (
         <ScrollView >
             <View style={specificStyle.container}>
-                <SearchBar
+                {/*<SearchBar
                     placeholder="Pesquisar por região..."
                     containerStyle={{backgroundColor: '#6615dd'}}
                     inputContainerStyle={{backgroundColor: '#6615dd'}}
                     searchIcon={{color: '#fff'}}
                     inputStyle={{backgroundColor: 'white', height: 5, borderRadius: 5}}
-                />
+                    marginTop={10}
+                />*/}
                 <View style={specificStyle.card}>
                     <Text style={specificStyle.title}>CASA PRÓXIMO AO METRÔ</Text>
                     <Text style={specificStyle.title}>Valor: R$ 300, mensal</Text>
@@ -30,12 +31,6 @@ export default function Feed() {
                             color='#424040'
                         />
                         <Text style={specificStyle.textIcon}>Chat</Text>
-                        <MaterialCommunityIcons
-                            name='share-outline'
-                            size={20}
-                            color='#424040'
-                        />
-                        <Text style={specificStyle.textIcon}>Compartilhar</Text>
                     </View>
                 </View>
 
@@ -54,12 +49,6 @@ export default function Feed() {
                             color='#424040'
                         />
                         <Text style={specificStyle.textIcon}>Chat</Text>
-                        <MaterialCommunityIcons
-                            name='share-outline'
-                            size={20}
-                            color='#424040'
-                        />
-                        <Text style={specificStyle.textIcon}>Compartilhar</Text>
                     </View>
                 </View>
 
@@ -78,12 +67,6 @@ export default function Feed() {
                             color='#424040'
                         />
                         <Text style={specificStyle.textIcon}>Chat</Text>
-                        <MaterialCommunityIcons
-                            name='share-outline'
-                            size={20}
-                            color='#424040'
-                        />
-                        <Text style={specificStyle.textIcon}>Compartilhar</Text>
                     </View>
                 </View>
 
@@ -95,6 +78,8 @@ export default function Feed() {
 const specificStyle = StyleSheet.create({
     container: {
         backgroundColor: '#6615dd',
+        paddingTop: 50,
+        paddingTop: StatusBar.currentHeight,
     },
     card: {
         backgroundColor: '#fff',

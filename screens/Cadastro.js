@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Platform } from 'react-native';
-import { KeyboardAvoidingView } from 'react-native';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Platform, View, TouchableOpacity, Modal } from 'react-native';
 import { CheckBox, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text';
 import styles from '../style/MainStyle';
 
 export default function Cadastro({ navigation }) {
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     const [email, setEmail] = useState(null)
     const [nome, setNome] = useState(null)
@@ -58,8 +58,7 @@ export default function Cadastro({ navigation }) {
             behavior={Platform.OS == "ios" ? "padding" : "height"}
             style={[styles.container, specificStyle.specificContainer]}
             keyboardVerticalOffset={80}>
-            <ScrollView style={{ width: "100%" }}>
-
+        <ScrollView style={{ width: "100%" }}>
                 <Input
                     placeholder="E-mail"
                     onChangeText={value => {
@@ -125,6 +124,7 @@ export default function Cadastro({ navigation }) {
                     checked={isSelected}
                     onPress={() => setSelected(!isSelected)}
                 />
+
                 <View style={specificStyle.btn}>
                     <TouchableOpacity
                         style={styles.btnSubmit}
@@ -137,16 +137,16 @@ export default function Cadastro({ navigation }) {
                         <Text style={styles.registerText}>Já tem cadastro? Faça login</Text>
                     </TouchableOpacity>
                 </View>
-
             </ScrollView>
-        </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
     );
 }
 
 const specificStyle = StyleSheet.create({
     specificContainer: {
         backgroundColor: "#fff",
-        padding: 10
+        padding: 10,
+        paddingTop: 50,
     },
     button: {
         width: "100%",

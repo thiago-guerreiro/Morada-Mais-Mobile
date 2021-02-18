@@ -4,24 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import FeedImoveis from './FeedImoveis';
-
 import CadastroImovel from './CadastroImovel';
-
-function Profile() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Profile!</Text>
-        </View>
-    );
-}
-
-function Notifications() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Notifications!</Text>
-        </View>
-    );
-}
+import Chat from './Chat';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,16 +27,6 @@ export default function Principal() {
             ),
             }}
         />
-        <Tab.Screen
-            name="Notifications"
-            component={Notifications}
-            options={{
-            tabBarLabel: 'Updates',
-            tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="bell" color={color} size={size} />
-            ),
-            }}
-        />
 
         <Tab.Screen
             name="CadastroImovel"
@@ -60,21 +34,22 @@ export default function Principal() {
             options={{
             tabBarLabel: 'Cadastrar Imóvel',
             tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="home-city" color={color} size={size} />
+                <MaterialCommunityIcons name="home-edit" color={color} size={size} />
             ),
             }}
         />
 
         <Tab.Screen
-            name="Profile"
-            component={Profile}
+            name="Chat"
+            component={Chat}
             options={{
-            tabBarLabel: 'Profile',
+            tabBarLabel: 'Chat',
             tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="account" color={color} size={size} />
+                <MaterialCommunityIcons name="chat" color={color} size={size} />
             ),
             }}
         />
+
         </Tab.Navigator>
     );
 }

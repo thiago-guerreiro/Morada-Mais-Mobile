@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     marginLeft: 15,
     color: "#f00",
-    fontSize: 12
+    fontSize: 12,
   },
-
   btnSubmit: {
     alignItems: 'center',
     justifyContent: 'center',
