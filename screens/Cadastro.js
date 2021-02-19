@@ -160,6 +160,7 @@ export default function Cadastro({ navigation }) {
                 </TouchableOpacity>
 
                 <CheckBox
+                    center
                     title="Li e aceito os termos de uso"
                     checkedIcon="check"
                     uncheckedIcon="square-o"
